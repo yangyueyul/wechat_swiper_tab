@@ -1,0 +1,32 @@
+<!-- 导航栏 -->
+<view class="weui-navbar">
+  <block wx:for-items="{{tabs}}">
+    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+      {{item}}
+    </view>
+  </block>
+  <view class="weui-navbar__slider" style="transform: translateX({{sliderOffset}}px);"></view>
+</view>
+<view class="rec" />
+<swiper current="{{activeIndex}}" class="swiper-box" duration="300" bindchange="bindChange">
+  <swiper-item>
+    <scroll-view class="scl" scroll-y bindscrolltolower="loadMore0">
+      <view class="scl-tab">tab0</view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view class="scl" scroll-y bindscrolltolower="loadMore0">
+      <view class="scl-tab">tab1</view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view class="scl" scroll-y bindscrolltolower="loadMore0">
+      <view class="scl-tab">tab2</view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view class="scl" scroll-y bindscrolltolower="loadMore0">
+      <view class="scl-tab">tab3</view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
